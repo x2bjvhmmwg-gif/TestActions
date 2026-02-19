@@ -8,9 +8,17 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: 출력하기
+            - name: 저장소 확인
+              uses: actions/checkout@v3
+            
+            - name: Python 환경설정
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.14"
+            
+            - name: Install dependencies
               run: |
-                echo 'github actions'
-                echo $GITHUB_SHA
-                echo $GITHUB_REPOSITORY
-                echo ${{ secrets.USE_NAME }}
+                pip install --upgrade pip
+
+            - name: Run python
+              run: python app.py
