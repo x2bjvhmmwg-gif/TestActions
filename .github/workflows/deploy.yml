@@ -9,4 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: 출력하기
-              run: echo 'github actions'
+              run: |
+							  echo "github actions"
+								echo $GITHUB_SHA
+								echo $GITHUB_REPOSITORY
