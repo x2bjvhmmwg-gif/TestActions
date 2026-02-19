@@ -10,6 +10,7 @@ jobs:
         steps:
             - name: 출력하기
               run: |
-							  echo "github actions"
-								echo $GITHUB_SHA
-								echo $GITHUB_REPOSITORY
+                echo 'github actions'
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo ${{ secrets.USE_NAME }}
